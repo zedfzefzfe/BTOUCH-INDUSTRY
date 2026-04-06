@@ -1,0 +1,117 @@
+/* BTOUCH INDUSTRY App Styles - Brand Colors Applied */
+
+/* Smooth scrolling for all anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default focus outline and add custom focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--brand-bronze);
+  outline-offset: 2px;
+}
+
+/* Selection color - bronze tint */
+::selection {
+  background-color: rgba(139, 94, 42, 0.3);
+  color: var(--brand-cream);
+}
+
+/* Card hover lift effect */
+@keyframes cardLift {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* Icon glow animation */
+@keyframes iconGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 94, 42, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 94, 42, 0.6);
+  }
+}
+
+/* Underline animation */
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Image loading placeholder */
+img {
+  background-color: #1a1a1a;
+}
+
+/* Custom scrollbar for webkit browsers - brand styled */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B5E2A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a06f35;
+}
+
+/* Animation for page load */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  animation: pageLoad 0.5s ease;
+}
+
+/* Ensure all images maintain aspect ratio */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition-property: color, background-color, border-color, opacity, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
