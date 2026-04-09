@@ -20,7 +20,7 @@ const Dressing = () => {
           observer.unobserve(entry.target);
           // Start playing the first video when section is visible
           if (video1Ref.current) {
-            video1Ref.current.play();
+            video1Ref.current.play().catch(() => {});
           }
         }
       },
@@ -38,14 +38,14 @@ const Dressing = () => {
   const handleVideo1End = () => {
     setCurrentPlayingVideo(2);
     if (video2Ref.current) {
-      video2Ref.current.play();
+      video2Ref.current.play().catch(() => {});
     }
   };
 
   const handleVideo2End = () => {
     setCurrentPlayingVideo(1);
     if (video1Ref.current) {
-      video1Ref.current.play();
+      video1Ref.current.play().catch(() => {});
     }
   };
 
@@ -149,6 +149,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video1Ref}
+                autoPlay
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
@@ -201,6 +202,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video2Ref}
+                autoPlay
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
