@@ -102,7 +102,7 @@ const About = () => {
           {section.cta && (
             <div className="mt-10">
               <a
-                href={section.cta.href}
+                href={section.cta?.href || "#"}
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.querySelector(section.cta?.href);
