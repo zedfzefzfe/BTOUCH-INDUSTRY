@@ -54,7 +54,7 @@ const Navigation = ({ cartItems, onRemoveFromCart, onUpdateQuantity }: Navigatio
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const _totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const scrollToSection = (href: string) => {
