@@ -149,6 +149,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video1Ref}
+                playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
                 onEnded={handleVideo1End}
@@ -200,6 +201,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video2Ref}
+                playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
                 onEnded={handleVideo2End}
