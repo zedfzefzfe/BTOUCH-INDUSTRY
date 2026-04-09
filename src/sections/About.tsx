@@ -105,7 +105,7 @@ const About = () => {
                 href={section.cta?.href || "#"}
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector(section.cta?.href);
+                  const element = document.querySelector(section.cta?.href || "");
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
