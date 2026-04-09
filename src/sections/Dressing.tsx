@@ -149,6 +149,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video1Ref}
+                preload="auto"
                 autoPlay
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -202,6 +203,7 @@ const Dressing = () => {
               {/* Video */}
               <video
                 ref={video2Ref}
+                preload="auto"
                 autoPlay
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
