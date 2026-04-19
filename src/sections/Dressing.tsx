@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Play } from 'lucide-react';
 import { dressingConfig } from '../config';
 
 const Dressing = () => {
@@ -10,7 +9,6 @@ const Dressing = () => {
   const video2Ref = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredVideo, setHoveredVideo] = useState<number | null>(null);
-  const [currentPlayingVideo, setCurrentPlayingVideo] = useState<1 | 2>(1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,19 +33,6 @@ const Dressing = () => {
   }, []);
 
   // Handle video playback sequence
-  const handleVideo1End = () => {
-    setCurrentPlayingVideo(2);
-    if (video2Ref.current) {
-      
-    }
-  };
-
-  const handleVideo2End = () => {
-    setCurrentPlayingVideo(1);
-    if (video1Ref.current) {
-      
-    }
-  };
 
   return (
     <section
@@ -151,10 +136,10 @@ const Dressing = () => {
                 ref={video1Ref}
                 preload="auto"
                 autoPlay
+                loop
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
-                onEnded={handleVideo1End}
               >
                 <source src={dressingConfig.video1} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -163,16 +148,6 @@ const Dressing = () => {
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-5" />
 
-              {/* Play Icon Overlay */}
-              <div
-                className={`absolute inset-0 flex items-center justify-center z-15 transition-all duration-500 ${
-                  hoveredVideo === 1 ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <div className="w-16 h-16 rounded-full bg-[#8B5E2A] flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <Play size={32} className="text-[#e8e0d0] fill-[#e8e0d0] ml-1" />
-                </div>
-              </div>
 
               {/* Label */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
@@ -205,10 +180,10 @@ const Dressing = () => {
                 ref={video2Ref}
                 preload="auto"
                 autoPlay
+                loop
                 playsInline
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 muted
-                onEnded={handleVideo2End}
               >
                 <source src={dressingConfig.video2} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -217,16 +192,6 @@ const Dressing = () => {
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-5" />
 
-              {/* Play Icon Overlay */}
-              <div
-                className={`absolute inset-0 flex items-center justify-center z-15 transition-all duration-500 ${
-                  hoveredVideo === 2 ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <div className="w-16 h-16 rounded-full bg-[#8B5E2A] flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                  <Play size={32} className="text-[#e8e0d0] fill-[#e8e0d0] ml-1" />
-                </div>
-              </div>
 
               {/* Label */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">

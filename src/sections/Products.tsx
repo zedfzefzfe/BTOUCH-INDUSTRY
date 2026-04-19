@@ -86,64 +86,55 @@ const Products = ({ onAddToCart: _ }: ProductsProps) => {
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayProducts.map((product, index) => {
-            const IconComponent = product.icon ? iconMap[product.icon] : null;
             return (
               <div
                 key={product.id}
-                className={`group h-full flex flex-col relative transition-all duration-700 ${
+                className={`group relative overflow-hidden rounded-xl transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ transitionDelay: `${800 + index * 100}ms` }}
+                style={{ transitionDelay: `${800 + index * 100}ms`, minHeight: '420px' }}
               >
-                {/* Gradient background glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                
-                {/* Card Container */}
-                <div className="relative h-full flex flex-col bg-gradient-to-br from-[#1f1f1f] to-[#161616] border border-[#8B5E2A]/30 group-hover:border-[#8B5E2A]/70 p-8 rounded-lg transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-[#8B5E2A]/20 group-hover:-translate-y-2">
-                  {/* Icon Container with Background */}
-                  {IconComponent && (
-                    <div className="mb-8 flex justify-center">
-                      <div className="relative">
-                        {/* Animated background circle */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/20 to-[#8B5E2A]/5 rounded-full blur-md group-hover:from-[#8B5E2A]/40 group-hover:to-[#8B5E2A]/15 transition-all duration-500" />
-                        
-                        {/* Icon with enhanced styling */}
-                        <div className="relative w-20 h-20 flex items-center justify-center rounded-full border border-[#8B5E2A]/40 group-hover:border-[#8B5E2A] bg-[#8B5E2A]/5 group-hover:bg-[#8B5E2A]/15 transition-all duration-500">
-                          <IconComponent
-                            size={48}
-                            strokeWidth={1.2}
-                            className="text-[#8B5E2A] group-hover:text-[#c97a3a] group-hover:scale-125 transition-all duration-500 drop-shadow-lg"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                {/* Background image */}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  style={{ transform: 'scale(1)', transitionTimingFunction: 'ease-out' }}
+                />
+
+                {/* Subtle dark vignette — very light so image shows clearly */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10 transition-all duration-500 group-hover:from-black/80 group-hover:via-black/30" />
+
+                {/* Gold border glow on hover */}
+                <div className="absolute inset-0 rounded-xl ring-1 ring-[#8B5E2A]/30 group-hover:ring-[#8B5E2A]/80 transition-all duration-500" />
+
+                {/* Content pinned to bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-7 flex flex-col">
+                  {/* Gold divider */}
+                  <div className="w-8 h-0.5 bg-gradient-to-r from-[#8B5E2A] to-[#c97a3a] mb-4 group-hover:w-14 transition-all duration-500" />
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl lg:text-2xl text-[#e8e0d0] mb-4 text-center leading-tight group-hover:text-white transition-colors duration-300">
+                  <h3 className="font-serif text-xl lg:text-[22px] text-white leading-snug mb-3 drop-shadow-lg group-hover:text-[#f5ede0] transition-colors duration-300" style={{ minHeight: '3rem' }}>
                     {product.name}
                   </h3>
 
-                  {/* Decorative line separator */}
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-[#8B5E2A]/0 via-[#8B5E2A] to-[#8B5E2A]/0 mx-auto mb-6 group-hover:w-16 transition-all duration-500" />
-
-                  {/* Description */}
-                  <p className="text-[#e8e0d0]/70 text-sm mb-8 flex-grow group-hover:text-[#e8e0d0]/80 transition-colors duration-300 leading-relaxed">
+                  {/* Description — fades in on hover */}
+                  <p className="text-white/75 text-sm leading-relaxed mb-5 opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-28 transition-all duration-500 ease-in-out drop-shadow">
                     {product.description}
                   </p>
 
-                  {/* Read More Link with animated underline */}
+                  {/* CTA */}
                   <a
                     href={product.link || '#contact'}
-                    className="inline-flex items-center gap-2 text-[#8B5E2A] group-hover:text-[#c97a3a] transition-colors duration-300 font-light text-sm tracking-wide relative"
+                    className="inline-flex items-center gap-2 text-[#c97a3a] group-hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-300"
                   >
                     <span className="relative">
-                      Demander Votre Devis Gratuit
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#8B5E2A] to-[#c97a3a] group-hover:w-full transition-all duration-500" />
+                      Devis Gratuit
+                      <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-500" />
                     </span>
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
               </div>

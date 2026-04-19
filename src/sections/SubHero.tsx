@@ -196,25 +196,6 @@ const SubHero = () => {
               </div>
             )}
 
-            {/* Decorative line */}
-            <div
-              className="absolute top-[10%] left-[-5%] w-32 h-32 border border-[#8b6d4b]/20"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'scale(1) rotate(0deg)' : 'scale(0.6) rotate(-12deg)',
-                transition: 'all 1.2s cubic-bezier(0.33, 1, 0.68, 1) 1s',
-              }}
-            />
-
-            {/* Floating accent dot */}
-            <div
-              className="absolute bottom-[15%] right-[-3%] w-4 h-4 rounded-full bg-[#8b6d4b]/30"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'scale(1)' : 'scale(0)',
-                transition: 'all 0.8s cubic-bezier(0.33, 1, 0.68, 1) 1.4s',
-              }}
-            />
           </div>
         </div>
       </div>

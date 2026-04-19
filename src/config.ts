@@ -179,7 +179,7 @@ export const productsConfig: ProductsConfig = {
       name: "La décoration d'intérieur", 
       price: 0, 
       category: "Cuisine", 
-      image: "/images/product-1.jpg",
+      image: "/images/decoration-inter.jpg",
       icon: "HardHat",
       description: "Une décoration d'intérieur réussie et une décoration harmonieuse qui respecte les désirs et les besoins du client.",
       link: "#contact"
@@ -189,7 +189,7 @@ export const productsConfig: ProductsConfig = {
       name: "Aménagement & Design intérieur", 
       price: 0, 
       category: "Dressing", 
-      image: "/images/product-2.jpg",
+      image: "/images/amenagement.jpg",
       icon: "Sofa",
       description: "Notre mission est le conseil, tant au niveau des couleurs que des matériaux, de l'éclairage, du mobilier et des accessoires.",
       link: "#contact"
@@ -199,7 +199,7 @@ export const productsConfig: ProductsConfig = {
       name: "Conception 2D/3D", 
       price: 0, 
       category: "Habillage", 
-      image: "/images/product-3.jpg",
+      image: "/images/3d.jpg",
       icon: "Ruler",
       description: "Une fois le pré-projet établi, vient l'étape de la présentation au client. Nous visualisons le projet sous forme de croquis...",
       link: "#contact"
@@ -209,7 +209,7 @@ export const productsConfig: ProductsConfig = {
       name: "Projet clé en main", 
       price: 0, 
       category: "3D", 
-      image: "/images/product-4.jpg",
+      image: "/images/cle.jpg",
       icon: "Trophy",
       description: "Le manque de temps, la méconnaissance des tendances, l'inexpérience dans le bricolage ou tout simplement le besoin...",
       link: "#contact"
@@ -235,6 +235,33 @@ export const productsConfig: ProductsConfig = {
       link: "#contact"
     },
   ],
+};
+
+// ─── Cuisine ─────────────────────────────────────────────────────────────────
+
+export interface CuisineConfig {
+  tag: string;
+  heading: string;
+  description: string;
+  paragraphs: string[];
+  ctaText: string;
+  ctaTarget: string;
+  image1: string;
+  image2: string;
+}
+
+export const cuisineConfig: CuisineConfig = {
+  tag: "CUISINE SUR MESURE",
+  heading: "Une Cuisine Taillée Pour Vous",
+  description: "De la conception à la pose, nous créons des cuisines qui allient esthétique raffinée et fonctionnalité optimale.",
+  paragraphs: [
+    "Chaque cuisine BTOUCH est une œuvre unique. Nous commençons par écouter vos besoins, vos habitudes et votre style de vie pour concevoir un espace qui vous ressemble vraiment.",
+    "Nos artisans sélectionnent les meilleurs matériaux — bois massif, laqué mat, marbre, inox — et les assemblent avec une précision irréprochable pour un résultat qui dure.",
+  ],
+  ctaText: "Demander un Devis Gratuit",
+  ctaTarget: "#contact",
+  image1: "/images/60.jpg",
+  image2: "/images/cuisine.jpg",
 };
 
 // ─── Dressing ────────────────────────────────────────────────────────────────
@@ -437,7 +464,7 @@ export const aboutConfig: AboutConfig = {
       textColor: "#e8e0d0",
       cta: {
         text: "Découvrir Nos Projets",
-        href: "#projects"
+        href: "#blog"
       }
     },
     {

@@ -6,6 +6,7 @@ import Hero from './sections/Hero';
 import SubHero from './sections/SubHero';
 import VideoSection from './sections/VideoSection';
 import Products from './sections/Products';
+import Cuisine from './sections/Cuisine';
 import Dressing from './sections/Dressing';
 import Features from './sections/Features';
 import Blog from './sections/Blog';
@@ -77,6 +78,7 @@ function App() {
         <VideoSection />
         <Products onAddToCart={handleAddToCart} />
         <Dressing />
+        <Cuisine />
         <Features />
         <Blog />
         <FAQ />

@@ -116,13 +116,32 @@ const Navigation = ({ cartItems, onRemoveFromCart, onUpdateQuantity }: Navigatio
       >
         <div className="absolute inset-0 bg-white" />
         <div className="relative h-full flex">
+          {/* Close button */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-8 right-8 z-10 group flex flex-col items-center gap-2"
+          >
+            <div className="relative flex items-center justify-center w-16 h-16">
+              {/* Outer ring — rotates on hover */}
+              <div className="absolute inset-0 rounded-full border border-[#8B5E2A]/30 group-hover:border-[#8B5E2A] group-hover:rotate-180 transition-all duration-700 ease-in-out" />
+              {/* Second ring — counter scale */}
+              <div className="absolute inset-[5px] rounded-full border border-[#8B5E2A]/20 group-hover:border-[#8B5E2A]/60 group-hover:-rotate-90 transition-all duration-700 ease-in-out" />
+              {/* Inner filled circle */}
+              <div className="absolute inset-[10px] rounded-full bg-black group-hover:bg-[#8B5E2A] transition-all duration-500 ease-in-out shadow-lg" />
+              {/* X icon */}
+              <X
+                size={16}
+                strokeWidth={1.8}
+                className="relative z-10 text-[#8B5E2A] group-hover:text-white group-hover:rotate-90 transition-all duration-500"
+              />
+            </div>
+            {/* Label */}
+            <span className="text-[10px] tracking-[0.25em] text-black/40 group-hover:text-[#8B5E2A] uppercase font-medium transition-colors duration-300">
+              Fermer
+            </span>
+          </button>
+
           <div className="flex-1 flex flex-col justify-center items-center px-8 lg:px-20">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 lg:right-20 p-2 hover:opacity-60 transition-opacity"
-            >
-              <X size={28} strokeWidth={1.5} />
-            </button>
 
             <div className="w-full max-w-md mb-8">
               <div className="relative">
