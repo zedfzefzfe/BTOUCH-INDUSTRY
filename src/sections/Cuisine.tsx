@@ -79,18 +79,15 @@ const Cuisine = () => {
               onMouseEnter={() => setHoveredImage(1)}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
-              <div className="absolute inset-0 rounded-xl border-2 border-[#8B5E2A]/30 group-hover:border-[#8B5E2A]/60 transition-all duration-500 z-10" />
-
               <img
                 src={cuisineConfig.image1}
                 alt="Cuisine sur mesure"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0"
               />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 rounded-xl border-2 border-[#8B5E2A]/30 group-hover:border-[#8B5E2A]/60 transition-all duration-500 z-20" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
                 <p className={`text-[#e8e0d0] font-light text-sm tracking-widest uppercase transform transition-all duration-500 ${hoveredImage === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   Conception Intérieure
                 </p>
@@ -106,18 +103,15 @@ const Cuisine = () => {
               onMouseEnter={() => setHoveredImage(2)}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
-              <div className="absolute inset-0 rounded-xl border-2 border-[#8B5E2A]/30 group-hover:border-[#8B5E2A]/60 transition-all duration-500 z-10" />
-
               <img
                 src={cuisineConfig.image2}
                 alt="Cuisine sur mesure"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0"
               />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#8B5E2A]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 rounded-xl border-2 border-[#8B5E2A]/30 group-hover:border-[#8B5E2A]/60 transition-all duration-500 z-20" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-30">
                 <p className={`text-[#e8e0d0] font-light text-sm tracking-widest uppercase transform transition-all duration-500 ${hoveredImage === 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                   Réalisation Qualité
                 </p>
